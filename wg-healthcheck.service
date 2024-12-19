@@ -1,0 +1,9 @@
+[Unit]
+Description=Service to check if wireguard is live, and restart if necessary
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/wg-healthcheck/wg-healthcheck.sh
+
